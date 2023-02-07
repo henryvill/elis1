@@ -35,7 +35,7 @@ const FindOrCreateTicketService = async (
     await ticket.update({ unreadMessages, whatsappId });
   }
   
-  if (ticket.status === "closed") {
+  if (ticket?.status === "closed") {
     await ticket.update({ queueId: null, userId: null });
   }
 
